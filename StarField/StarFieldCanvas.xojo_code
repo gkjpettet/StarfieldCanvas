@@ -3,8 +3,6 @@ Protected Class StarFieldCanvas
 Inherits Canvas
 	#tag Event
 		Sub Paint(g As Graphics, areas() As REALbasic.Rect)
-		  #Pragma Unused areas
-		  
 		  // Start with a black background.
 		  g.DrawingColor = Color.Black
 		  g.FillRectangle(0, 0, me.Width, me.Height)
@@ -41,6 +39,8 @@ Inherits Canvas
 		    Next s
 		  End If
 		  
+		  // Raise the Paint event.
+		  Paint(g, areas)
 		End Sub
 	#tag EndEvent
 
@@ -228,6 +228,11 @@ Inherits Canvas
 		  StarsNeedDrawing = False
 		End Sub
 	#tag EndMethod
+
+
+	#tag Hook, Flags = &h0
+		Event Paint(g As Graphics, areas() As REALbasic.Rect)
+	#tag EndHook
 
 
 	#tag Property, Flags = &h21
