@@ -1,7 +1,9 @@
 #tag Class
 Protected Class Star
-	#tag Method, Flags = &h0
-		Sub Constructor(x As Double, y As Double, z As Double)
+	#tag Method, Flags = &h0, Description = 44656661756C7420636F6E7374727563746F722074616B696E67203320636F6F7264696E617465732E
+		Sub Constructor(x As Integer, y As Integer, z As Integer)
+		  /// Default constructor taking 3 coordinates.
+		  
 		  Self.X = x
 		  Self.Y = y
 		  Self.Z = z
@@ -12,15 +14,15 @@ Protected Class Star
 
 
 	#tag Property, Flags = &h0
-		X As Double
+		X As Integer
 	#tag EndProperty
 
 	#tag Property, Flags = &h0
-		Y As Double
+		Y As Integer
 	#tag EndProperty
 
-	#tag Property, Flags = &h0
-		Z As Double
+	#tag Property, Flags = &h0, Description = 5468652064697374616E63652074686520737461722069732066726F6D20746865207669657765722E2030203D20617420746865207669657765722E
+		Z As Integer
 	#tag EndProperty
 
 

@@ -1,9 +1,9 @@
-#tag Window
-Begin Window Window1
+#tag DesktopWindow
+Begin DesktopWindow Window1
    Backdrop        =   0
    BackgroundColor =   &cFFFFFF00
    Composite       =   False
-   DefaultLocation =   "0"
+   DefaultLocation =   0
    FullScreen      =   False
    HasBackgroundColor=   False
    HasCloseButton  =   True
@@ -21,7 +21,7 @@ Begin Window Window1
    MinimumWidth    =   400
    Resizeable      =   True
    Title           =   "StarField"
-   Type            =   "0"
+   Type            =   0
    Visible         =   True
    Width           =   1078
    Begin StarField.StarFieldCanvas StarFieldCanvas1
@@ -30,7 +30,6 @@ Begin Window Window1
       AllowFocusRing  =   False
       AllowTabs       =   False
       Backdrop        =   0
-      DoubleBuffer    =   False
       Enabled         =   True
       Height          =   669
       Index           =   -2147483648
@@ -51,7 +50,7 @@ Begin Window Window1
       Visible         =   True
       Width           =   1078
    End
-   Begin PushButton ButtonToggleAnimation
+   Begin DesktopButton ButtonToggleAnimation
       AllowAutoDeactivate=   True
       Bold            =   False
       Cancel          =   False
@@ -71,7 +70,7 @@ Begin Window Window1
       LockLeft        =   False
       LockRight       =   True
       LockTop         =   False
-      MacButtonStyle  =   "0"
+      MacButtonStyle  =   0
       Scope           =   2
       TabIndex        =   1
       TabPanelIndex   =   0
@@ -83,7 +82,7 @@ Begin Window Window1
       Visible         =   True
       Width           =   80
    End
-   Begin Slider SliderStarSpeed
+   Begin DesktopSlider SliderStarSpeed
       AllowAutoDeactivate=   True
       AllowLiveScrolling=   True
       Enabled         =   True
@@ -104,7 +103,7 @@ Begin Window Window1
       TabIndex        =   2
       TabPanelIndex   =   0
       TabStop         =   True
-      TickMarkStyle   =   "2"
+      TickMarkStyle   =   2
       Tooltip         =   ""
       Top             =   681
       Transparent     =   False
@@ -112,11 +111,9 @@ Begin Window Window1
       Visible         =   True
       Width           =   283
    End
-   Begin Label Label1
+   Begin DesktopLabel Label1
       AllowAutoDeactivate=   True
       Bold            =   False
-      DataField       =   ""
-      DataSource      =   ""
       Enabled         =   True
       FontName        =   "System"
       FontSize        =   0.0
@@ -137,25 +134,25 @@ Begin Window Window1
       TabIndex        =   3
       TabPanelIndex   =   0
       TabStop         =   True
-      TextAlignment   =   "3"
+      Text            =   "Star Speed:"
+      TextAlignment   =   3
       TextColor       =   &c00000000
       Tooltip         =   ""
       Top             =   681
       Transparent     =   False
       Underline       =   False
-      Value           =   "Star Speed:"
       Visible         =   True
       Width           =   90
    End
 End
-#tag EndWindow
+#tag EndDesktopWindow
 
 #tag WindowCode
 #tag EndWindowCode
 
 #tag Events ButtonToggleAnimation
 	#tag Event
-		Sub Action()
+		Sub Pressed()
 		  Select Case StarFieldCanvas1.Animating
 		  Case False
 		    Me.Caption = "Stop"
